@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Ivy Zhou | Product</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+  <nav class="main-nav">
+    <ul>
+      <li>
+        <ul>
+          <li><a href="/">About</a></li>
+          <li><a href="projects" class="active">My Projects</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section id="home-head" class="contact">
+  <h1>Product Detail</h1>
+</section>
+<section id="main-content">
+  <div class="text-intro">
+    <h2>Product</h2>
+  </div>
+  <div class="columns features">
+    <div class="crayonico">this is product detail: {{ product }}</div>
+    <form>{% csrf_token %}</form>
+  </div>
+</section>
+<footer>
+  
+</footer>
+</body>
+</html>
