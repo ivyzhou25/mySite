@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Ivy Zhou | Projects</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+  <nav class="main-nav">
+    <ul>
+      <li>
+	    <ul>
+	      <li><a href="/">About</a></li>
+	      <li><a href="projects" class="active">My Projects</a></li>
+	      <li><a href="contact">Contact</a></li>
+	    </ul>
+      </li>
+    </ul>
+  </nav>
+</header>
+<section id="home-head" class="work">
+  <h1>The Projects I Am Working on</h1>
+</section>
+<section id="main-content">
+  <div class="text-intro">
+    <h2>Projects</h2>
+  </div>
+  <div class="columns">
+    <div class="img-first"><a href="#"><img src="{% static 'images/chatbot.jpg' %}" alt=""></a><h3 align='center'>Chatbot</h3></div>
+    <div class="img-second"><a href="product"><img src="{% static 'images/image_understanding.jpg' %}" alt=""></a> <h3 align='center'>Image Understanding</h3></div>
+  </div>
+  </div>
+</section>
+<footer>
+  
+</footer>
+</body>
+</html>
