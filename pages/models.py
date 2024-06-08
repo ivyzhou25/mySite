@@ -1,5 +1,5 @@
 from django.db import models
+import requests
 
-class Topic(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField()
+class Image(models.Model):
+    image = models.ImageField(upload_to='images/')
