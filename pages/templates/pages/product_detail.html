@@ -21,14 +21,16 @@
   </nav>
 </header>
 <section id="home-head" class="contact">
+  <h1>Product Detail</h1>
 </section>
 <section id="main-content">
   <div class="text-intro">
     <h2>Image Description</h2>
   </div>
   <div class="columns features">
-    <div class="crayonico">this is uploaded image: {{ img }}</div>
-    <a href="{{ MEDIA_URL }}{{ img }}">download</a>
+    <div class="crayonico">this is uploaded image: <a href="{{MEDIA_URL}}{{img}}">{{ img }} </a></div>
+    <div class="crayonico">the description of : {{ resp }}</div>
+    
     <form>{% csrf_token %}</form>
   </div>
 </section>
