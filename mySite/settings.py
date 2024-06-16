@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-cjqsxp%wh76&lavtbox&jd^2(7@2h4$w1b*jqr@ci5busw^=+$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mySite-env.eba-6khuk4nk.us-west-2.elasticbeanstalk.com','127.0.0.1']
+ALLOWED_HOSTS = ['mySite-env.eba-tm34e3rk.us-west-2.elasticbeanstalk.com','127.0.0.1', 'ivyzhou.com']
 #ALLOWED_HOSTS = []
 
 # Application definition
@@ -133,7 +133,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

@@ -1,17 +1,14 @@
 import base64
 import requests
 
-api_key = <api_key>
+api_key = ""
 
 # Function to encode the image
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
-def process_image(image_path):
-    # Path to your image
-    #image_path = "/Users/ivyzhou/downloads/Artboard_Copy_231.jpg"
-    
+def process_image(image_path, prompt):
     # Getting the base64 string
     base64_image = encode_image(image_path)
     
@@ -28,7 +25,7 @@ def process_image(image_path):
           "content": [
             {
               "type": "text",
-              "text": "What’s in this image?"
+              "text": prompt + ", what’s in this image?"
             },
             {
               "type": "image_url",
