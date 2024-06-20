@@ -2,6 +2,9 @@ branch-defaults:
   default:
     environment: mySite-env
     group_suffix: null
+  main:
+    environment: mySite-env
+    group_suffix: null
 environment-defaults:
   mySite-env:
     branch: null
