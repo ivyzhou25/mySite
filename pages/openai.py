@@ -44,15 +44,19 @@ def process_image(image_path, prompt):
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
     return response
 
-def choose_course(course1, course2):
+def choose_course(query):
+    sys_prompt = "You are a course selection assistant, skilled in helping Cornell students decide between two courses."
+    user_prompt = "As a Cornell student, " + query + ". Use open_url() to read course introduction and course reviews from https://www.cureviews.org, refer professor rating from https://www.ratemyprofessors.com."
+    output_prompt = "Exclude the introduction about not being able to access information. Output should include course number and course title. Output 3 sections for each course: course difficulty, course review and instructor rating, also include conclusion section. Format html to content, use separator between courses, course number and conclusion in h1 font. Only return html body."
     client = OpenAI(api_key=api_key)
     completion = client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "You are a course selection assistant, skilled in helping Cornell students decide between two courses."},
-            {"role": "user", "content": "I am a Cornell student, and want to choose between courses " + str(course1) + " and " + str(course2) + ". Use open_url() to read course introduction and course reviews from https://www.cureviews.org, which should I take for next fall?"},
-            {"role": "user", "content": "Exclude the introduction about not being able to access information, get straight to the comparison."}
+            {"role": "system", "content": sys_prompt},
+            {"role": "user", "content": user_prompt},
+            {"role": "user", "content": output_prompt}
         ]
     )
     response = completion.choices[0].message.content
     return response
+

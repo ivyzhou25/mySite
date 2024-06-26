@@ -7,5 +7,9 @@ class ImageForm(forms.Form):
     file = forms.FileField(label="Upload image:")
     
 class CourseForm(forms.Form):        
-    course1 = forms.CharField(label="Course 1:", max_length=15)
-    course2 = forms.CharField(label="Course 2:", max_length=15)
+    query = forms.CharField(label="Question", widget=forms.Textarea(attrs={'cols':110}))
+    
+class ContactForm(forms.Form):
+    email = forms.EmailField(widget=forms.TextInput(attrs={"placeholder": "Your email"}))
+    subject = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Subject"}))
+    message = forms.CharField(widget=forms.Textarea(attrs={"placeholder": "Your message"}))

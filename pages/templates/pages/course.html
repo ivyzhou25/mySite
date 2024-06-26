@@ -21,17 +21,18 @@
   </nav>
 </header>
 <section id="home-head" class="contact">
-<h1 align='center'>Course Selection</h1>
+<h1 align='center'>Course Recommendation</h1>
 </section>
 <section id="main-content">
   <div class="text-intro">
-    <h3>Enter the two courses that you are deciding between.</h3>
+    <h3>Cornell Course Recommendation AI Assistant</h3>
   </div>
   <div class="columns features">
     <form method="post" enctype="multipart/form-data" id="product-form">
+      <label for="fname">If you need input on deciding between two Cornell courses or want course recommendations for a specific area, please enter your question. <br><br> For example, you can ask, 'could you help decide between computer system organization and embedded systems?' or 'can you give some recommendations for courses about programming?'<br><br></label>
     {% csrf_token %} 
     {{ form.as_p }}
-      <input class="btn-input" id="sendMessage" name="sendMessage" type="submit" value="Submit">
+      <input class="btn-input" id="sendMessage" name="sendMessage" type="submit" value="Ask Course Assistant">
     </form>
   </div>
 </section>

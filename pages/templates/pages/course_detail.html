@@ -24,11 +24,10 @@
 </section>
 <section id="main-content">
   <div class="text-intro">
-    <h2>Image Description</h2>
+    <h2>Course Recommendation</h2>
   </div>
   <div class="columns features">
-    <div class="crayonico">The comprison of {{course1}} and {{course2}}: </div>
-    <div class="crayonico"> {{ resp|linebreaks }}</div>
+    <div class="crayonico"> {{ resp|safe }}</div>
     <form>{% csrf_token %}</form>
   </div>
 </section>
